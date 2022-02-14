@@ -57,11 +57,24 @@ class RecyclerViewAdapter(
             titleView.text = dish.name_title
             priceView.text = "${dish.prices.first().price} €"
             Picasso.get()
-                //.load(dish.getThumbnailUrl())
+                // .load(dish.getThumbnailUrl())
                 .load(R.drawable.android_pie)
                 .error(R.drawable.android_pie)
                 .placeholder(R.drawable.android_pie)
                 .into(imageView)
+        /*if (dish.getThumbnailUrl() != null || dish.getThumbnailUrl()!!.isEmpty()) {
+                Picasso.get()
+                    .load(dish.getThumbnailUrl())
+                    .error(R.drawable.android_pie)
+                    .placeholder(R.drawable.android_pie)
+                    .into(imageView)
+            } else {
+                Picasso.get()
+                    .load(R.drawable.android_pie)
+                    .error(R.drawable.android_pie)
+                    .placeholder(R.drawable.android_pie)
+                    .into(imageView)
+            }*/
         }
     }
 }

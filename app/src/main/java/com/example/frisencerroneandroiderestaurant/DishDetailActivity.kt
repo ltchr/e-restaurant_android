@@ -33,6 +33,9 @@ class DishDetailActivity : AppCompatActivity() {
         */
         binding.tvDishName.text = dishDetailModel!!.name_title
         binding.tvDishPrice.text = dishDetailModel.prices[0].price + " €"
+        // binding.tvDishIngredient.text = dishDetailModel?.ingredients?.map { it.name }?.joinToString("\n ")
+
+
         for (index in dishDetailModel.ingredients)
             binding.tvDishIngredient.append(index.name + "\n")
 
@@ -74,11 +77,11 @@ class DishDetailActivity : AppCompatActivity() {
     }
 
     private fun updateCounter(value: String) {
-        var priceCount = 0
+        var priceCount = 0.0
         var counter = 0
 
         binding.btnAdd.setOnClickListener {
-            priceCount += value.toInt()
+            priceCount += value.toFloat()
             counter += 1
             binding.tvCounter.text = priceCount.toString() + "€"
             binding.dishNumberQuantity.text = counter.toString()
@@ -87,9 +90,9 @@ class DishDetailActivity : AppCompatActivity() {
         binding.btnRemove.setOnClickListener {
             if (counter > 0) {
                 counter -= 1
-                priceCount -= value.toInt()
+                priceCount -= value.toFloat()
             } else {
-                priceCount = 0
+                priceCount = 0.0
                 counter = 0
             }
 
