@@ -12,12 +12,12 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         binding = HomeMainBinding.inflate(layoutInflater)
-        //setContentView(R.layout.home_main)
+  
         setContentView(binding.root)
 
         binding.buttonFirst.setOnClickListener {
             manageIntent(ItemType.STARTER)
-            // Toast.makeText(baseContext, "Back to menu", Toast.LENGTH_SHORT).show()
+     
         }
         binding.buttonFirst2.setOnClickListener {
             manageIntent(ItemType.MAIN)
@@ -30,7 +30,7 @@ class HomeActivity : BaseActivity() {
     private fun manageIntent(categoryKey: ItemType) {
         val myIntent = Intent(this, NextActivity::class.java)
         myIntent.putExtra(CATEGORY_KEY, categoryKey)
-        Log.i("Info Debug", "End Home activity")
+  
 
         this.startActivity(myIntent)
     }

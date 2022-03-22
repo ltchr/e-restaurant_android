@@ -25,19 +25,15 @@ data class DishModel(
 
 data class PriceData(val price: String) : Serializable
 class IngredientData(@SerializedName("name_title") val name: String) : Serializable {}
-// data class IngredientData(val name_title: String) : Serializable
 
-
-// class Ingredient(@SerializedName("name_title") val name: String): Serializable {}
-// class Price(val price: String): Serializable {}
 
 class Category(@SerializedName("name_fr") val name: String, val items: List<DishModel>) {}
 
 class MenuResult(val data: List<Category>) {
 }
 
-// class RegisterResult(val data: User) {}
+
 class RegisterResult(val data: User) {}
 
-// class User(@SerializedName("name_title") val name: String, val items: List<DishModel>) {}
+
 class User(val id: Int) : Serializable {}

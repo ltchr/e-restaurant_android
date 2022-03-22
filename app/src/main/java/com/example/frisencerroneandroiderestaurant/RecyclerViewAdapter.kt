@@ -33,17 +33,16 @@ class RecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dish = itemListEntries[position]
-        //holder.binding.nameTitle.text = dish.name_title
+       
         holder.layout.setOnClickListener {
             entriesClickListener.invoke(dish)
-            // entriesClickListener.onItemClickListener(itemListEntries[position])
+    
         }
         holder.bind(dish)
     }
 
     override fun getItemCount(): Int {
-        //Log.d("### DEBUG itemListEntries.size: ", itemListEntries.size.toString())
-        // return itemListEntries.size
+
         return itemListEntries.count()
     }
 
@@ -57,24 +56,12 @@ class RecyclerViewAdapter(
             titleView.text = dish.name_title
             priceView.text = "${dish.prices.first().price} €"
             Picasso.get()
-                // .load(dish.getThumbnailUrl())
+
                 .load(R.drawable.android_pie)
                 .error(R.drawable.android_pie)
                 .placeholder(R.drawable.android_pie)
                 .into(imageView)
-        /*if (dish.getThumbnailUrl() != null || dish.getThumbnailUrl()!!.isEmpty()) {
-                Picasso.get()
-                    .load(dish.getThumbnailUrl())
-                    .error(R.drawable.android_pie)
-                    .placeholder(R.drawable.android_pie)
-                    .into(imageView)
-            } else {
-                Picasso.get()
-                    .load(R.drawable.android_pie)
-                    .error(R.drawable.android_pie)
-                    .placeholder(R.drawable.android_pie)
-                    .into(imageView)
-            }*/
+
         }
     }
 }

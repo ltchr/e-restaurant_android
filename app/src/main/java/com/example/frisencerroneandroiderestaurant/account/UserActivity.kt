@@ -105,10 +105,9 @@ class UserActivity : AppCompatActivity(), UserActivityFragmentInteraction {
             },
             { error ->
                 error.message?.let {
-                    Log.d("request", it)
+                 
                 } ?: run {
-                    Log.d("request", error.toString())
-                    Log.d("request", String(error.networkResponse.data))
+     
                 }
             }
         )

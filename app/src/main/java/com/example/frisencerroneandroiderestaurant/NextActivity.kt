@@ -36,29 +36,20 @@ enum class ItemType {
 
 class NextActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCategoryBinding
-    // var category: String? = ""
+ 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCategoryBinding.inflate(layoutInflater)
-        //setContentView(R.layout.activity_category)
+     
         setContentView(binding.root)
 
-        //val mRecycler = findViewById<View>(R.id.yourid) as RecyclerView
-        //mRecycler.adapter = adapter
 
-        // findViewById<TextView>(R.id.category_title)
 
-        /*if (intent.hasExtra("category_key")) {
-            // binding.categoryTitle.text = intent.getStringExtra("category_key")
-            category = intent.getStringExtra("category_key")
-        }*/
-        /*else {
-            category = intent.getSerializableExtra(HomeActivity.CATEGORY_KEY).toString()
-        }*/
+
         val category = intent.getSerializableExtra(HomeActivity.CATEGORY_KEY) as? ItemType
 
-        // binding.categoryTitle.text = category
+        
         binding.categoryTitle.text = getCategoryTitle(category)
         loadView(listOf<DishModel>())
         callApi(category)
@@ -73,22 +64,17 @@ class NextActivity : AppCompatActivity() {
         val jsonObject = JsonObjectRequest(
             Request.Method.POST, apiURL, jsonObj,
             { response ->
-                // val dishesResponse = Gson().fromJson(response.toString(), DishesModel::class.java)
+            
                 parseResult(response.toString(), category)
-                // parseResult(dishesResponse.data.firstOrNull { it.name_title == category }?.items)
-                // loadView(dishesResponse.data.firstOrNull { true }?.items ?: listOf())
+
             },
             { error ->
                 error.printStackTrace()
-                Log.e("NextActivity", "ERR0R request api")
+      
             }
         )
-        /*jsonObject.retryPolicy = DefaultRetryPolicy(
-            DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
-            0,
-            1f
-        )*/
-        //Log.d("### DEBUG jsonObject: ", jsonObject.toString())
+
+   
         Volley.newRequestQueue(this).add(jsonObject)
     }
 
@@ -105,10 +91,7 @@ class NextActivity : AppCompatActivity() {
             recyclerViewCategory.setHasFixedSize(true)
             recyclerViewCategory.adapter = adapter
         }
-        //recyclerViewCategory.layoutManager = GridLayoutManager(this, 2)
-        //recyclerViewCategory.layoutManager = LinearLayoutManager(this)
-        //recyclerViewCategory.setHasFixedSize(true)
-        //recyclerViewCategory.adapter = dishesList?.let { RecyclerViewAdapter(it, this) }
+
     }
 
     private fun parseResult(response: String, category: ItemType?) {
