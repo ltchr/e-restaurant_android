@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".InformationActivity">
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="149dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="152dp"
+        android:text="Commencer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/information"
+        android:layout_width="359dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="180dp"
+        android:text="La conservation de vos informations lors de votre inscription et de vos achats est stocké du côté de l'API et non de l'application.En cas de perte, vos données ne pourront pas être récupérées depuis l'application.\n\nVeuillez à ne pas partager vos informations personnelles comme votre mot de passe ou informations bancaires. "
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/informationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conditions et informations"
+        android:textColor="#ECE8E8"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/information"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
