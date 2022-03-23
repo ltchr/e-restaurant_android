@@ -19,7 +19,7 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         binding = HomeMainBinding.inflate(layoutInflater)
-        /*
+
         if (checkRootMethod1() || checkRootMethod2() || checkRootMethod3())
         {
             exitProcess(0)
@@ -32,7 +32,7 @@ class HomeActivity : BaseActivity() {
         if (isEmulator()){
             Toast.makeText(baseContext, "Vous êtes sur un émulateur", Toast.LENGTH_SHORT).show()
             Log.d("", "Vous êtes sur émulateur")
-        }*/
+        }
 
         binding = HomeMainBinding.inflate(layoutInflater)
         //setContentView(R.layout.home_main)
