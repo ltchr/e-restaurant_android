@@ -25,9 +25,16 @@ class DishDetailActivity : AppCompatActivity() {
 
         val dishDetailModel: DishModel? = intent.getSerializableExtra(DISH_EXTRA) as DishModel?
 
+        /*val dish = intent.getSerializableExtra(DISH_EXTRA) as? DishModel
+        dish?.let {
+            updateView(it)
+        }
+        val frag = DetailViewFragment(dish)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainer, frag).commit()
+        */
         binding.tvDishName.text = dishDetailModel!!.name_title
         binding.tvDishPrice.text = dishDetailModel.prices[0].price + " €"
-       
+        // binding.tvDishIngredient.text = dishDetailModel?.ingredients?.map { it.name }?.joinToString("\n ")
 
 
         for (index in dishDetailModel.ingredients)

@@ -34,13 +34,11 @@ class BasketAdapter(
             itemPrice.text = "${item.dish.prices.first().price}€"
             itemQuantity.text = "${context.getString(R.string.quantity)} ${item.count.toString()}"
             Picasso.get()
-               
                 .load(R.drawable.android_pie)
                 .error(R.drawable.android_pie)
                 .placeholder(R.drawable.android_pie)
                 .into(itemImageView)
             deleteButton.setOnClickListener {
-               
                 delegate.onDeleteItem(item)
             }
         }
@@ -59,7 +57,6 @@ class BasketAdapter(
     override fun onBindViewHolder(holder: BasketViewHolder, position: Int) {
         val item = basket.items[position]
         holder.layout.setOnClickListener {
-         
             delegate.onShowDetail(item)
         }
         holder.bind(item, context, delegate)

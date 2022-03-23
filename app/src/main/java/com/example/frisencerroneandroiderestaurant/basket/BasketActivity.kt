@@ -90,9 +90,7 @@ class BasketActivity : AppCompatActivity(), BasketCellInterface {
             },
             { error ->
                 error.message?.let {
-              
                 } ?: run {
-               
                 }
             }
         )

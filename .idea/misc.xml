@@ -29,6 +29,15 @@
         <entry key="..\:/Users/lcorc/AndroidStudioProjects/frisencerroneandroiderestaurant2/app/src/main/res/layout/item_row.xml" value="0.536" />
         <entry key="..\:/Users/lcorc/AndroidStudioProjects/frisencerroneandroiderestaurant2/app/src/main/res/layout/menu_basket.xml" value="0.8" />
         <entry key="..\:/Users/lcorc/AndroidStudioProjects/frisencerroneandroiderestaurant2/app/src/main/res/menu/menu.xml" value="0.13802083333333334" />
+<<<<<<< HEAD
+=======
+        <entry key="app/src/main/res/layout/activity_information.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/home_main.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.333786231884058" />
+>>>>>>> origin/test
       </map>
     </option>
   </component>

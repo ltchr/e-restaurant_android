@@ -105,9 +105,7 @@ class UserActivity : AppCompatActivity(), UserActivityFragmentInteraction {
             },
             { error ->
                 error.message?.let {
-                 
                 } ?: run {
-     
                 }
             }
         )
