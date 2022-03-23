@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.frisencerroneandroiderestaurant.databinding.HomeMainBinding
 import com.scottyab.rootbeer.RootBeer
 import java.io.BufferedReader
@@ -27,6 +28,10 @@ class HomeActivity : BaseActivity() {
         val rootBeer = RootBeer(this)
         if (rootBeer.isRooted) {
             exitProcess(10)
+        }
+        if (isEmulator()){
+            Toast.makeText(baseContext, "Vous êtes sur un émulateur", Toast.LENGTH_SHORT).show()
+            Log.d("", "Vous êtes sur émulateur")
         }
 
         binding = HomeMainBinding.inflate(layoutInflater)
@@ -93,6 +98,26 @@ class HomeActivity : BaseActivity() {
             process?.destroy()
         }
     }
+    private fun isEmulator(): Boolean {
+        return (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")
+                || Build.FINGERPRINT.startsWith("generic")
+                || Build.FINGERPRINT.startsWith("unknown")
+                || Build.HARDWARE.contains("goldfish")
+                || Build.HARDWARE.contains("ranchu")
+                || Build.MODEL.contains("google_sdk")
+                || Build.MODEL.contains("Emulator")
+                || Build.MODEL.contains("Android SDK built for x86")
+                || Build.MANUFACTURER.contains("Genymotion")
+                || Build.PRODUCT.contains("sdk_google")
+                || Build.PRODUCT.contains("google_sdk")
+                || Build.PRODUCT.contains("sdk")
+                || Build.PRODUCT.contains("sdk_x86")
+                || Build.PRODUCT.contains("sdk_gphone64_arm64")
+                || Build.PRODUCT.contains("vbox86p")
+                || Build.PRODUCT.contains("emulator")
+                || Build.PRODUCT.contains("simulator"))
+    }
+
 
     private fun exitProcess(status: Int): Nothing{
         exitProcess(10)

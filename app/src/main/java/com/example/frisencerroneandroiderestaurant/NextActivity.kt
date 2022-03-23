@@ -86,18 +86,7 @@ class NextActivity : AppCompatActivity() {
             },
             { error ->
                 error.printStackTrace()
-      
-            }
-        )
-
-                // val dishesResponse = Gson().fromJson(response.toString(), DishesModel::class.java)
-                parseResult(response.toString(), category)
-                // parseResult(dishesResponse.data.firstOrNull { it.name_title == category }?.items)
-                // loadView(dishesResponse.data.firstOrNull { true }?.items ?: listOf())
-            },
-            { error ->
-                error.printStackTrace()
-                Log.e("NextActivity", "ERR0R request api")
+                //Log.e("NextActivity", "ERR0R request api")
             }
         )
         /*jsonObject.retryPolicy = DefaultRetryPolicy(
